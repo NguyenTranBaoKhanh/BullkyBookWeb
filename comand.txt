@@ -1,0 +1,4 @@
+ dotnet tool install --global dotnet-ef 
+ dotnet ef migrations add MyFirstMigration
+ dotnet ef database update
+https://youtu.be/hZ1DASYd9rk

@@ -1,0 +1,39 @@
+@model Category
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form method="post" asp-action="Edit">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Edit Category</h2>
+            <hr>
+        </div>
+        
+        @* de valid tat ca cac feild trong form *@
+        <div asp-validation-summary="All"></div>
+
+        <div class="mb-3">
+
+            @* do co asp-for nen khi click vao edit thi cac field tu dong co data luon, tag-helper hay vcl *@
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="DisplayOrder"></label>
+            <input asp-for="DisplayOrder" class="form-control">
+            <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a asp-controller="Category" asp-action="index" class="btn btn-secondary">Back to list</a>
+    </div>
+</form>
+
+@* them nay de cho validation k load lai page *@
+@section Scripts{
+@{
+    <partial name="_ValidationScriptsPartial" />
+}
+}
